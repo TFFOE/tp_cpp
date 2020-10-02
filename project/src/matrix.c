@@ -53,7 +53,45 @@ int free_matrix(Matrix* matrix) {
     free(matrix);
     return SUCCESS;
 }
-
-Matrix* split_matrix(Matrix* matrix) {
+Matrix** split_matrix(Matrix* matrix) {
+    size_t rows = matrix->rows;
+    size_t cols = matrix->cols;
+    Matrix* matrix1 = create_matrix(rows, (cols + 2) / 3);
+    Matrix* matrix2 = create_matrix(rows, (cols + 1) / 3);
+    Matrix* matrix3 = create_matrix(rows, cols / 3);
     
+    for (size_t i = 0; i < rows; ++i) {
+        for (size_t j = 0; j < cols; ++j) {
+            if (j % 3 == 0) {
+                matrix1->data[i][j / 3] = matrix->data[i][j];
+            }
+            else if (j % 3 == 1) {
+                matrix2->data[i][j / 3] = matrix->data[i][j];
+            }
+            else {
+                matrix3->data[i][j / 3] = matrix->data[i][j];
+            }
+        }
+    }
+
+    Matrix** result = malloc(3 * sizeof(Matrix*));
+    result[0] = matrix1;
+    result[1] = matrix2;
+    result[2] = matrix3;
+    return result;
+}
+
+void print_matrix(Matrix* matrix) {
+    if (matrix == NULL)
+        return;
+    if (matrix->cols < 1 || matrix->rows < 1)
+        return;
+    printf("\n");
+    for (size_t i = 0; i < matrix->rows; ++i) {
+        for (size_t j = 0; j < matrix->cols; ++j) {
+            printf("%3.3lf ", matrix->data[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
 }
