@@ -8,7 +8,7 @@ typedef struct Matrix {
 } Matrix;
 
 Matrix* create_matrix(size_t rows, size_t cols);
-Matrix* create_matrix_from_file()
+Matrix* create_matrix_from_file();
 int free_matrix(Matrix* matrix);
 
 Matrix* split_matrix(Matrix* matrix);
