@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/technopark/tp_cpp/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/home/technopark/tp_cpp/include  -O3 -DNDEBUG   --coverage -o CMakeFiles/task1_executable.dir/src/main.c.o   -c /home/technopark/tp_cpp/src/main.c",
+  "file": "/home/technopark/tp_cpp/src/main.c"
+},
+{
+  "directory": "/home/technopark/tp_cpp/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9  -I/home/technopark/tp_cpp/include  -O3 -DNDEBUG   --coverage -o CMakeFiles/task1_executable.dir/src/matrix.c.o   -c /home/technopark/tp_cpp/src/matrix.c",
+  "file": "/home/technopark/tp_cpp/src/matrix.c"
+}
+]
