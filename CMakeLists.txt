@@ -11,6 +11,7 @@ include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 file(GLOB SOURCES "src/*.cpp")
 file(GLOB TEST_SRC_FILES "gtests/tests.cpp")
+file(GLOB TEST_FUNCTIONS_FILES "src/matrix.cpp")
 
 #find_package(PkgConfig)
 #pkg_search_module(GTEST REQUIRED gtest_main)
@@ -20,7 +21,7 @@ file(GLOB TEST_SRC_FILES "gtests/tests.cpp")
 #add_compile_options(PUBLIC ${GTEST_CFLAGS})
 
 option(BUILD_TESTS "Build all tests." OFF) # Makes boolean 'test' available.
-
+TEST_FUNCTIONS_FILES
 if (BUILD_TESTS)
   # This adds another subdirectory, which has 'project(gtest)'.
   add_subdirectory(ext/gtest)
@@ -34,7 +35,7 @@ if (BUILD_TESTS)
   ##############
   # Unit Tests
   ##############
-  add_executable(runUnitTests ${TEST_SRC_FILES})
+  add_executable(runUnitTests ${TEST_SRC_FILES} ${TEST_FUNCTIONS_FILES})
   add_executable(task1 ${SOURCES})
 
   # Standard linking to gtest stuff.
