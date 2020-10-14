@@ -7,7 +7,7 @@ language: cpp       # на практике разницы между специ
 os:
     # будем прогонять CI и на Linux, и на Mac OS X...
     - linux
-    - osx
+    #- osx
 
 compiler:
     # ... и с помощью GCC, и Clang
@@ -17,21 +17,21 @@ compiler:
 env:
     # список переменных окружения, влияющих на матрицу сборки:
     - TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
-    - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
-    - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
-    - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
+    #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
+    #- TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
+    #- TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
-matrix:
-    exclude:
+#matrix:
+    #exclude:
         # вручную исключим ненужные элементы из матрицы сборки:
-        - os:       osx
-          compiler: gcc
+        #- os:       osx
+        #  compiler: gcc
 
-        - os:  osx
-          env: TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
+        #- os:  osx
+        #  env: TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
 
-        - os:  osx
-          env: TARGET_CPU=x86 BUILD_CONFIGURATION=Release
+        #- os:  osx
+        #  env: TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
 #install:
     # скрипт настройки среды и установки зависимостей:
@@ -41,18 +41,19 @@ script:
     # скрипт сборки и тестирования проекта:
     - cd build
     - cmake ..
+    - make
     #- cmake --build .
-    - ctest --output-on-failure
+    #- ctest --output-on-failure
 
-deploy:
+#deploy:
     # выкладываем tagged-коммиты на GitHub Releases:
-    provider:     releases
-    file:         <package-file>
-    skip_cleanup: true
-    overwrite:    true
-
-    api_key:
-        secure:   <encrypted-github-token>
-
-    on:
-        tags:     true
+#    provider:     releases
+#    file:         <package-file>
+#    skip_cleanup: true
+#    overwrite:    true
+#
+#    api_key:
+#        secure:   <encrypted-github-token>
+#
+#    on:
+#        tags:     true
