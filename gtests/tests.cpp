@@ -47,17 +47,19 @@ TEST(MatrixCreatingFromFileTest, MatrixReadCheck) {
 
     Matrix* matrix1 = create_matrix_from_file(file_path);
     Matrix* matrix2 = create_matrix(2, 3);
-    matrix2->data[1][0] = 4;
-    matrix2->data[1][1] = 5;
-    matrix2->data[1][2] = 6;
-    matrix2->data[2][0] = 7;
-    matrix2->data[2][1] = 8;
-    matrix2->data[2][2] = 9;
+    matrix2->data[0][0] = 4;
+    matrix2->data[0][1] = 5;
+    matrix2->data[0][2] = 6;
+    matrix2->data[1][0] = 7;
+    matrix2->data[1][1] = 8;
+    matrix2->data[1][2] = 9;
 
-    ASSERT_EQ(0, check_matrices_for_equality(matrix1, matrix2));
-    remove(file_path);
+    ASSERT_EQ(1, check_matrices_for_equality(matrix1, matrix2));
+
     free_matrix(matrix1);
     free_matrix(matrix2);
+
+    remove(file_path);    
 }
 
 TEST(SplitMatrixTest, MainCheck) {
@@ -67,7 +69,12 @@ TEST(SplitMatrixTest, MainCheck) {
     matrix->data[0][2] = 3;
     
     Matrix** splitted_matrices = split_matrix(matrix);
-    ASSERT_EQ(1, splitted_matrices[0]->data[0][0]);
-    ASSERT_EQ(2, splitted_matrices[1]->data[0][0]);
-    ASSERT_EQ(3, splitted_matrices[2]->data[0][0]);
+    ASSERT_EQ(1, (splitted_matrices[0]->data)[0][0]);
+    ASSERT_EQ(2, (splitted_matrices[1]->data)[0][0]);
+    ASSERT_EQ(3, (splitted_matrices[2]->data)[0][0]);
+
+    free_matrix(matrix);
+    for (int i = 0; i < 2; ++i)
+        free_matrix(splitted_matrices[i]);
+    free(splitted_matrices);
 }
