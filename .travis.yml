@@ -49,20 +49,16 @@ install:
     # Download and install recent cmake
     - |
       if [[ ${TRAVIS_OS_NAME} == "linux" ]]; then
-        CMAKE_URL="http://www.cmake.org/files/v3.5/cmake-3.5.1-Linux-x86_64.tar.gz"
+        CMAKE_URL="http://www.cmake.org/files/v3.17/cmake-3.17.1-Linux-x86_64.tar.gz"
         mkdir -p ${DEPS_DIR}/cmake
         travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C ${DEPS_DIR}/cmake
         export PATH=${DEPS_DIR}/cmake/bin:${PATH}
       fi
 script:
-    ############################################################################
-    # Build main and tests
-    ############################################################################
      - mkdir -p build
      - cd build
      - cmake .. 
      - make
-     #- make project1_coverage
      - ./task1
 
 
