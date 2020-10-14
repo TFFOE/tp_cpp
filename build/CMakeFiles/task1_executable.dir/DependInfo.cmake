@@ -1,16 +1,17 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "C"
+  "CXX"
   )
 # The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_C
-  "/home/technopark/tp_cpp/src/main.c" "/home/technopark/tp_cpp/build/CMakeFiles/task1_executable.dir/src/main.c.o"
-  "/home/technopark/tp_cpp/src/matrix.c" "/home/technopark/tp_cpp/build/CMakeFiles/task1_executable.dir/src/matrix.c.o"
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/technopark/tp_cpp/gtests/tests.cpp" "/home/technopark/tp_cpp/build/CMakeFiles/task1_executable.dir/gtests/tests.cpp.o"
+  "/home/technopark/tp_cpp/src/main.cpp" "/home/technopark/tp_cpp/build/CMakeFiles/task1_executable.dir/src/main.cpp.o"
+  "/home/technopark/tp_cpp/src/matrix.cpp" "/home/technopark/tp_cpp/build/CMakeFiles/task1_executable.dir/src/matrix.cpp.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
-set(CMAKE_C_TARGET_INCLUDE_PATH
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
   )
 

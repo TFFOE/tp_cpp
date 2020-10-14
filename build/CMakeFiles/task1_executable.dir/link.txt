@@ -1,1 +1,1 @@
-/bin/x86_64-linux-gnu-gcc-9 -O3 -DNDEBUG    CMakeFiles/task1_executable.dir/src/main.c.o CMakeFiles/task1_executable.dir/src/matrix.c.o  -o task1_executable  -lgcov 
+/bin/x86_64-linux-gnu-g++-9    -O3 -DNDEBUG    CMakeFiles/task1_executable.dir/gtests/tests.cpp.o CMakeFiles/task1_executable.dir/src/main.cpp.o CMakeFiles/task1_executable.dir/src/matrix.cpp.o  -o task1_executable  -lgcov -L/usr/lib/x86_64-linux-gnu/pkgconfig/../../lib/x86_64-linux-gnu -lgtest_main -lpthread -lgtest -lpthread -lgtest 

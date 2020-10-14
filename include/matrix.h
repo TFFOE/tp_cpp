@@ -1,6 +1,9 @@
 #ifndef INCLUDE_MATRIX_H_
 #define INCLUDE_MATRIX_H_
 
+#include <stdlib.h>
+#include <stdio.h>
+
 typedef struct Matrix {
     double** data;
     size_t cols;
@@ -9,7 +12,7 @@ typedef struct Matrix {
 
 Matrix* create_matrix(size_t rows, size_t cols);
 Matrix* create_matrix_from_file(const char* path_file);
-int free_matrix(Matrix* matrix);
+void free_matrix(Matrix* matrix);
 void print_matrix(Matrix* matrix);
 
 Matrix** split_matrix(Matrix* matrix);

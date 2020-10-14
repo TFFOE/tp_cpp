@@ -57,45 +57,60 @@ include CMakeFiles/task1_executable.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/task1_executable.dir/flags.make
 
-CMakeFiles/task1_executable.dir/src/main.c.o: CMakeFiles/task1_executable.dir/flags.make
-CMakeFiles/task1_executable.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/technopark/tp_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/task1_executable.dir/src/main.c.o"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/task1_executable.dir/src/main.c.o   -c /home/technopark/tp_cpp/src/main.c
+CMakeFiles/task1_executable.dir/gtests/tests.cpp.o: CMakeFiles/task1_executable.dir/flags.make
+CMakeFiles/task1_executable.dir/gtests/tests.cpp.o: ../gtests/tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/technopark/tp_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/task1_executable.dir/gtests/tests.cpp.o"
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task1_executable.dir/gtests/tests.cpp.o -c /home/technopark/tp_cpp/gtests/tests.cpp
 
-CMakeFiles/task1_executable.dir/src/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/task1_executable.dir/src/main.c.i"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/technopark/tp_cpp/src/main.c > CMakeFiles/task1_executable.dir/src/main.c.i
+CMakeFiles/task1_executable.dir/gtests/tests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/task1_executable.dir/gtests/tests.cpp.i"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/technopark/tp_cpp/gtests/tests.cpp > CMakeFiles/task1_executable.dir/gtests/tests.cpp.i
 
-CMakeFiles/task1_executable.dir/src/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/task1_executable.dir/src/main.c.s"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/technopark/tp_cpp/src/main.c -o CMakeFiles/task1_executable.dir/src/main.c.s
+CMakeFiles/task1_executable.dir/gtests/tests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/task1_executable.dir/gtests/tests.cpp.s"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/technopark/tp_cpp/gtests/tests.cpp -o CMakeFiles/task1_executable.dir/gtests/tests.cpp.s
 
-CMakeFiles/task1_executable.dir/src/matrix.c.o: CMakeFiles/task1_executable.dir/flags.make
-CMakeFiles/task1_executable.dir/src/matrix.c.o: ../src/matrix.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/technopark/tp_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/task1_executable.dir/src/matrix.c.o"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/task1_executable.dir/src/matrix.c.o   -c /home/technopark/tp_cpp/src/matrix.c
+CMakeFiles/task1_executable.dir/src/main.cpp.o: CMakeFiles/task1_executable.dir/flags.make
+CMakeFiles/task1_executable.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/technopark/tp_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/task1_executable.dir/src/main.cpp.o"
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task1_executable.dir/src/main.cpp.o -c /home/technopark/tp_cpp/src/main.cpp
 
-CMakeFiles/task1_executable.dir/src/matrix.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/task1_executable.dir/src/matrix.c.i"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/technopark/tp_cpp/src/matrix.c > CMakeFiles/task1_executable.dir/src/matrix.c.i
+CMakeFiles/task1_executable.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/task1_executable.dir/src/main.cpp.i"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/technopark/tp_cpp/src/main.cpp > CMakeFiles/task1_executable.dir/src/main.cpp.i
 
-CMakeFiles/task1_executable.dir/src/matrix.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/task1_executable.dir/src/matrix.c.s"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/technopark/tp_cpp/src/matrix.c -o CMakeFiles/task1_executable.dir/src/matrix.c.s
+CMakeFiles/task1_executable.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/task1_executable.dir/src/main.cpp.s"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/technopark/tp_cpp/src/main.cpp -o CMakeFiles/task1_executable.dir/src/main.cpp.s
+
+CMakeFiles/task1_executable.dir/src/matrix.cpp.o: CMakeFiles/task1_executable.dir/flags.make
+CMakeFiles/task1_executable.dir/src/matrix.cpp.o: ../src/matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/technopark/tp_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/task1_executable.dir/src/matrix.cpp.o"
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task1_executable.dir/src/matrix.cpp.o -c /home/technopark/tp_cpp/src/matrix.cpp
+
+CMakeFiles/task1_executable.dir/src/matrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/task1_executable.dir/src/matrix.cpp.i"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/technopark/tp_cpp/src/matrix.cpp > CMakeFiles/task1_executable.dir/src/matrix.cpp.i
+
+CMakeFiles/task1_executable.dir/src/matrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/task1_executable.dir/src/matrix.cpp.s"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/technopark/tp_cpp/src/matrix.cpp -o CMakeFiles/task1_executable.dir/src/matrix.cpp.s
 
 # Object files for target task1_executable
 task1_executable_OBJECTS = \
-"CMakeFiles/task1_executable.dir/src/main.c.o" \
-"CMakeFiles/task1_executable.dir/src/matrix.c.o"
+"CMakeFiles/task1_executable.dir/gtests/tests.cpp.o" \
+"CMakeFiles/task1_executable.dir/src/main.cpp.o" \
+"CMakeFiles/task1_executable.dir/src/matrix.cpp.o"
 
 # External object files for target task1_executable
 task1_executable_EXTERNAL_OBJECTS =
 
-task1_executable: CMakeFiles/task1_executable.dir/src/main.c.o
-task1_executable: CMakeFiles/task1_executable.dir/src/matrix.c.o
+task1_executable: CMakeFiles/task1_executable.dir/gtests/tests.cpp.o
+task1_executable: CMakeFiles/task1_executable.dir/src/main.cpp.o
+task1_executable: CMakeFiles/task1_executable.dir/src/matrix.cpp.o
 task1_executable: CMakeFiles/task1_executable.dir/build.make
 task1_executable: CMakeFiles/task1_executable.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/technopark/tp_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable task1_executable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/technopark/tp_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable task1_executable"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/task1_executable.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
