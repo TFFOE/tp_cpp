@@ -75,7 +75,7 @@ TEST(SplitMatrixTest, MainCheck) {
 
     printf("Initial matrix:\n");
     print_matrix(matrix);
-    
+
     printf("Splitted matrices:\n");
     printf("- matrix1:\n");
     print_matrix(splitted_matrices[0]);
@@ -88,4 +88,14 @@ TEST(SplitMatrixTest, MainCheck) {
     for (int i = 0; i < 2; ++i)
         free_matrix(splitted_matrices[i]);
     free(splitted_matrices);
+}
+
+TEST(CreateMatrixTest, ZeroColsRows) {
+    ASSERT_EQ(NULL, create_matrix(0, 0));
+}
+
+TEST(SplitMatrixTest, ZeroColsRows) {
+    Matrix* matrix = create_matrix(0, 0);
+    ASSERT_EQ(NULL, split_matrix(matrix));
+    free(matrix);
 }
