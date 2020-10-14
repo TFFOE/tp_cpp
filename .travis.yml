@@ -57,7 +57,7 @@ install:
 script:
      - mkdir -p build
      - cd build
-     - cmake .. 
+     - cmake -DBUILD_TESTS=ON ..
      - make
      - ./task1
 
