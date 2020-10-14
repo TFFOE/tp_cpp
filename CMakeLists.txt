@@ -15,7 +15,7 @@ file(GLOB TEST_SOURCES "gtests/tests.cpp")
 #find_package(PkgConfig)
 #pkg_search_module(GTEST REQUIRED gtest_main)
 
-add_executable(task1 ${SOURCES})
+
 #target_link_libraries(task1 gcov ${GTEST_LDFLAGS})
 #add_compile_options(PUBLIC ${GTEST_CFLAGS})
 
@@ -35,6 +35,7 @@ if (BUILD_TESTS)
   # Unit Tests
   ##############
   add_executable(runUnitTests ${TEST_SRC_FILES})
+  add_executable(task1 ${SOURCES})
 
   # Standard linking to gtest stuff.
   target_link_libraries(runUnitTests gtest gtest_main)
