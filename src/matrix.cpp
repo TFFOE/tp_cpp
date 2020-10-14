@@ -24,8 +24,7 @@ Matrix* create_matrix(size_t rows, size_t cols) {
 
 Matrix* create_matrix_from_file(const char* file_path) {
     assert(file_path == NULL && "PATH FILE IS NULL");
-    assert(file_path == "" && "PATH FILE IN EMPTY");
-    if (file_path == NULL || file_path == "")
+    if (file_path == NULL)
         return NULL;
 
     FILE* matrix_file = fopen(file_path, "r");
@@ -106,4 +105,19 @@ void print_matrix(Matrix* matrix) {
         printf("\n");
     }
     printf("\n");
+}
+
+int check_matrices_for_equality(Matrix* matrix1, Matrix* matrix2) {
+    if (matrix1 == NULL || matrix2 == NULL)
+        return 0;
+    
+    if (!(matrix1->rows == matrix2->rows && matrix1->cols == matrix2->cols))
+        return 0;
+
+    for (int i = 0; i < matrix1->rows; ++i)
+        for (int j = 0; j < matrix1->cols; ++j)
+            if (matrix1->data[i][j] != matrix2->data[i][j])
+                return 0;
+    
+    return 1;
 }

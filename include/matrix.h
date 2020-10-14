@@ -14,6 +14,7 @@ Matrix* create_matrix(size_t rows, size_t cols);
 Matrix* create_matrix_from_file(const char* path_file);
 void free_matrix(Matrix* matrix);
 void print_matrix(Matrix* matrix);
+int check_matrices_for_equality(Matrix* matrix1, Matrix* matrix2);
 
 Matrix** split_matrix(Matrix* matrix);
 

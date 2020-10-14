@@ -61,5 +61,7 @@ script:
      - make task1_coverage
 
 after_success:
+    - rm ext/gtest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.gcda
+    - rm ext/gtest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.gcda
     - codecov -t c8b7183a7-31f5-401e-ab37-6ad397e89e12 -X gcov
     - bash <(curl -s https://codecov.io/bash)
