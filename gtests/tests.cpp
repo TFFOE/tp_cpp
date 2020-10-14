@@ -67,11 +67,22 @@ TEST(SplitMatrixTest, MainCheck) {
     matrix->data[0][0] = 1;
     matrix->data[0][1] = 2;
     matrix->data[0][2] = 3;
-    
+
     Matrix** splitted_matrices = split_matrix(matrix);
     ASSERT_EQ(1, (splitted_matrices[0]->data)[0][0]);
     ASSERT_EQ(2, (splitted_matrices[1]->data)[0][0]);
     ASSERT_EQ(3, (splitted_matrices[2]->data)[0][0]);
+
+    printf("Initial matrix:\n");
+    print_matrix(matrix);
+    
+    printf("Splitted matrices:\n");
+    printf("- matrix1:\n");
+    print_matrix(splitted_matrices[0]);
+    printf("- matrix2:\n");
+    print_matrix(splitted_matrices[1]);
+    printf("- matrix3:\n");
+    print_matrix(splitted_matrices[2]);
 
     free_matrix(matrix);
     for (int i = 0; i < 2; ++i)
