@@ -59,6 +59,7 @@ script:
      - cd build
      - cmake -DBUILD_TESTS=ON ..
      - make
+     - ctest
 
 
 #after_success:
