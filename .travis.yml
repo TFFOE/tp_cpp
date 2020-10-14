@@ -22,7 +22,7 @@ matrix:
          packages: &precise_latest_boost_packages
            - gcc-4.8
            - g++-4.8
-           #- gcov-4.9
+           - gcov-4.9
            - clang-3.7
            - valgrind
            # Misc
@@ -57,10 +57,8 @@ install:
 script:
      - mkdir -p build
      - cd build
-     - cmake -DBUILD_TESTS=ON ..
-     - make
-     - ctest
+     - cmake -DBUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Coverage ..
+     - make task1_coverage
 
-
-#after_success:
-    #- codecov -t c376990f-2ad6-4f7b-bbdb-5378a52e295c -X gcov
+after_success:
+    - codecov -t c8b7183a7-31f5-401e-ab37-6ad397e89e12 -X gcov
