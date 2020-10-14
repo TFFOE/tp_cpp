@@ -35,7 +35,7 @@ if (BUILD_TESTS)
   # Unit Tests
   ##############
   add_executable(runUnitTests ${TEST_SRC_FILES} ${TEST_FUNCTIONS_FILES})
-  add_executable(task1 ${SOURCES})
+  #add_executable(task1 ${SOURCES})
 
   # Standard linking to gtest stuff.
   target_link_libraries(runUnitTests gtest gtest_main)
