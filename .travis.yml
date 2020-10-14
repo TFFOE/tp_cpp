@@ -41,16 +41,17 @@ before_script:
       export PATH="${PWD}/bin:$PATH"
       popd
 
-      apt-get install libgtest-dev
-        cd /usr/src/gtest
-        sudo cmake CMakeLists.txt
-        sudo make
-        sudo cp lib/*.a /usr/lib
-        sudo ln -s /usr/lib/libgtest.a /usr/local/lib/gtest/libgtest.a
-        sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/gtest/libgtest_main.a
     else
       if ! brew ls --version cmake &>/dev/null; then brew update; brew install cmake; fi
     fi
+
+#apt-get install libgtest-dev
+#      cd /usr/src/gtest
+#      sudo cmake CMakeLists.txt
+#      sudo make
+#      sudo cp lib/*.a /usr/lib
+#      sudo ln -s /usr/lib/libgtest.a /usr/local/lib/gtest/libgtest.a
+#      sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/gtest/libgtest_main.a
 
 #matrix:
     #exclude:
