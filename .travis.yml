@@ -59,8 +59,9 @@ script:
      - cd build
      - cmake -DBUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Coverage ..
      - make task1_coverage
+     - valgrind --leak-check=full ./runUnitTests
+     - cd ..
      - linters/run.sh --local
-     - valgrind --leak-check=full ./runUnitTest
 
 after_success:
      - pwd
