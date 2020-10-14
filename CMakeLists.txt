@@ -21,7 +21,6 @@ file(GLOB TEST_FUNCTIONS_FILES "src/matrix.cpp")
 #add_compile_options(PUBLIC ${GTEST_CFLAGS})
 
 option(BUILD_TESTS "Build all tests." OFF) # Makes boolean 'test' available.
-TEST_FUNCTIONS_FILES
 if (BUILD_TESTS)
   # This adds another subdirectory, which has 'project(gtest)'.
   add_subdirectory(ext/gtest)
