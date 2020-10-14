@@ -40,9 +40,9 @@ TEST(MatrixCreatingTest, RowsColsCheck) {
 }
 
 TEST(MatrixCreatingFromFileTest, MatrixReadCheck) {
-    const char* file_path = "new_matrix_file_for_test_123123123123456.mat";
+    const char* file_path = "new_matrix_file_for_test_123123123456123.mat";
     FILE* new_matrix_file = fopen(file_path, "w+");
-    fprintf(new_matrix_file, "1 1\n");
+    fprintf(new_matrix_file, "2 3\n4 5 6\n7 8 9\n");
     fclose(new_matrix_file);
     ASSERT_EQ(NULL, create_matrix_from_file(file_path));
     remove(file_path);
