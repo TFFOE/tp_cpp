@@ -59,7 +59,6 @@ script:
      - cd build
      - cmake -DBUILD_TESTS=ON ..
      - make
-     - ./task1
 
 
 #after_success:
