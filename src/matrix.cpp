@@ -64,6 +64,10 @@ void free_matrix(Matrix* matrix) {
 }
 
 Matrix** split_matrix(Matrix* matrix) {
+
+    if (matrix == NULL)
+        return NULL;
+
     size_t rows = matrix->rows;
     size_t cols = matrix->cols;
 
