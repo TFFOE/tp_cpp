@@ -25,6 +25,7 @@ matrix:
            - gcovr
            - clang-3.7
            - valgrind
+           - cppcheck
            # Misc
            - python-yaml
            - lcov
