@@ -7,11 +7,11 @@
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
-    // Matrix* matrix = create_matrix();
-    // // Matrix* matrix = create_matrix_from_file("../matrix.mat");
+
+    // Matrix* matrix = create_matrix_from_file("../matrix.mata");
     // if (!matrix) {
     //     free_matrix(matrix);
-    //     return;
+    //     return 0;
     // }
 
     // Matrix** matrices = split_matrix(matrix);
@@ -27,4 +27,6 @@ int main(int argc, char** argv) {
     // free_matrix(matrices[1]);
     // free_matrix(matrices[2]);
     // free(matrices);
+
+    // return 0;
 }

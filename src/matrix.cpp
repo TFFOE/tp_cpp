@@ -22,15 +22,17 @@ Matrix* create_matrix(size_t rows, size_t cols) {
     return matrix;
 }
 
-Matrix* create_matrix_from_file(const char* path_file) {
-    assert(path_file == NULL && "PATH FILE IS NULL");
-    if (path_file == NULL)
+Matrix* create_matrix_from_file(const char* file_path) {
+    assert(file_path == NULL && "PATH FILE IS NULL");
+    assert(file_path == "" && "PATH FILE IN EMPTY");
+    if (file_path == NULL || file_path == "")
         return NULL;
 
-    FILE* matrix_file = fopen(path_file, "r");
+    FILE* matrix_file = fopen(file_path, "r");
     assert(matrix_file == NULL && "MATRIX FILE IS NULL");
-    if (matrix_file == NULL)
+    if (matrix_file == NULL) {
         return NULL;
+    }
 
     int rows, cols;
     if (fscanf(matrix_file, "%d %d", &rows, &cols) == -1) {
