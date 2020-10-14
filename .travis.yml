@@ -62,7 +62,7 @@ before_script:
 
 script:
     # скрипт сборки и тестирования проекта:
-    - cd build
+    #- cd build
     - cmake ..
     - make
     #- cmake --build .
