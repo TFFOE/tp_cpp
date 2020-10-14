@@ -44,7 +44,6 @@ before_script:
       if ! brew ls --version cmake &>/dev/null; then brew update; brew install cmake; fi
     fi
 
-  - |
     if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
         apt-get install libgtest-dev
         cd /usr/src/gtest
