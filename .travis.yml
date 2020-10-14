@@ -44,6 +44,16 @@ before_script:
       if ! brew ls --version cmake &>/dev/null; then brew update; brew install cmake; fi
     fi
 
+  - |
+    if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
+        apt-get install libgtest-dev
+        cd /usr/src/gtest
+        cmake CMakeLists.txt
+        make
+        cp lib/*.a /usr/lib
+        ln -s /usr/lib/libgtest.a /usr/local/lib/gtest/libgtest.a
+        ln -s /usr/lib/libgtest_main.a /usr/local/lib/gtest/libgtest_main.a
+
 #matrix:
     #exclude:
         # вручную исключим ненужные элементы из матрицы сборки:
