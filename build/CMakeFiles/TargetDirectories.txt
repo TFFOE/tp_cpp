@@ -1,3 +1,0 @@
-/home/technopark/tp_cpp/build/CMakeFiles/rebuild_cache.dir
-/home/technopark/tp_cpp/build/CMakeFiles/edit_cache.dir
-/home/technopark/tp_cpp/build/CMakeFiles/task1_executable.dir

@@ -1,27 +1,23 @@
-dist:     trusty    # используем Ubuntu 14.04 Trusty Tahr (а не 12.02 Precise Pangolin)
-sudo:     required  # используем Virtual Machine (а не Docker container)
-
-language: cpp       # на практике разницы между специфичным для C++ окружением
-                    # и, скажем, python -- никакой. Но пусть будет cpp.
-
 os:
-    # будем прогонять CI и на Linux, и на Mac OS X...
     - linux
     #- osx
 
+dist:     trusty
+sudo:     true
+
+language: cpp
+
 compiler:
-    # ... и с помощью GCC, и Clang
     - gcc
-    - clang
+    #- clang
 
 env:
-    # список переменных окружения, влияющих на матрицу сборки:
     - TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
     #- TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
     #- TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
     #- TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
-before_script:
+install:
 
   #
   # Build Folder
@@ -53,7 +49,27 @@ before_script:
 #      sudo ln -s /usr/lib/libgtest.a /usr/local/lib/gtest/libgtest.a
 #      sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/gtest/libgtest_main.a
 
-#matrix:
+matrix:
+    include:
+        - os: linux
+          dist: trusty
+          sudo: true
+          compiler: gcc
+          addons:
+            apt:
+                packages: &precise_latest_boost_packages
+                    - gcc-4.8
+                    - g++-4.8
+                    - gcov-4.9
+                    - clang-3.7
+                    - valgrind
+                    # Misc
+                    - python-yaml
+                    - lcov
+                    - libopencv-dev
+                sources: &precise_latest_boost_sources
+                    - ubuntu-toolchain-r-test
+                    - llvm-toolchain-precise-3.7
     #exclude:
         # вручную исключим ненужные элементы из матрицы сборки:
         #- os:       osx
