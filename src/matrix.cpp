@@ -34,7 +34,7 @@ Matrix* create_matrix_from_file(const char* file_path) {
     }
 
     int rows, cols;
-    if (fscanf(matrix_file, "%d %d", &rows, &cols) == -1) {
+    if (fscanf(matrix_file, "%10d %10d", &rows, &cols) == -1) {
         fclose(matrix_file);
         return NULL;
     }
@@ -43,7 +43,7 @@ Matrix* create_matrix_from_file(const char* file_path) {
     for (int i = 0; i < rows; ++i)
         for (int j = 0; j < cols; ++j) {
             double value;
-            if (fscanf(matrix_file, "%lf", &value) == -1) {
+            if (fscanf(matrix_file, "%308lf", &value) == -1) {
                 fclose(matrix_file);
                 free_matrix(matrix);
                 return NULL;
@@ -64,7 +64,6 @@ void free_matrix(Matrix* matrix) {
 }
 
 Matrix** split_matrix(Matrix* matrix) {
-
     if (matrix == NULL)
         return NULL;
 
@@ -114,7 +113,7 @@ void print_matrix(Matrix* matrix) {
 int check_matrices_for_equality(Matrix* matrix1, Matrix* matrix2) {
     if (matrix1 == NULL || matrix2 == NULL)
         return 0;
-    
+
     if (!(matrix1->rows == matrix2->rows && matrix1->cols == matrix2->cols))
         return 0;
 
@@ -122,6 +121,5 @@ int check_matrices_for_equality(Matrix* matrix1, Matrix* matrix2) {
         for (int j = 0; j < matrix1->cols; ++j)
             if (matrix1->data[i][j] != matrix2->data[i][j])
                 return 0;
-    
     return 1;
 }
