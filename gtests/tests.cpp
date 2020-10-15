@@ -1,4 +1,6 @@
-#include "matrix.h"
+extern "C" {
+    #include "matrix.h"
+}
 #include <gtest/gtest.h>
 
 TEST(MatrixCreatingFromFileTest, NullPath) {

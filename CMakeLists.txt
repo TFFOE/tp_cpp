@@ -9,9 +9,11 @@ SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include") 
 
-file(GLOB SOURCES "src/*.cpp")
-file(GLOB TEST_SRC_FILES "gtests/tests.cpp")
-file(GLOB TEST_FUNCTIONS_FILES "src/matrix.cpp")
+file(GLOB SOURCES "src/main.c" "src/matrix.c")
+file(GLOB TEST_SRC_FILES "gtests/tests.cpp" "gtests/main.cpp") 
+file(GLOB TEST_FUNCTIONS_FILES "src/matrix.c")
+
+add_executable(task1 ${SOURCES})
 
 option(BUILD_TESTS "Build all tests." OFF) # Makes boolean 'test' available.
 if (BUILD_TESTS)
@@ -28,8 +30,6 @@ if (BUILD_TESTS)
   # Unit Tests
   ##############
   add_executable(runUnitTests ${TEST_SRC_FILES} ${TEST_FUNCTIONS_FILES})
-  add_executable(task1 ${SOURCES})
-
   # Standard linking to gtest stuff.
   target_link_libraries(runUnitTests gtest gtest_main)
 

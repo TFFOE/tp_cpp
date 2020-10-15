@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <assert.h>
 #include "matrix.h"
 
 enum FUNCTION_RETURN_INFO {
@@ -23,12 +22,10 @@ Matrix* create_matrix(size_t rows, size_t cols) {
 }
 
 Matrix* create_matrix_from_file(const char* file_path) {
-    assert(file_path == NULL && "PATH FILE IS NULL");
     if (file_path == NULL)
         return NULL;
 
     FILE* matrix_file = fopen(file_path, "r");
-    assert(matrix_file == NULL && "MATRIX FILE IS NULL");
     if (matrix_file == NULL) {
         return NULL;
     }
