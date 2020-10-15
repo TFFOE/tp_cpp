@@ -15,7 +15,8 @@ Matrix* create_matrix(size_t rows, size_t cols) {
     matrix->rows = rows;
     matrix->cols = cols;
     matrix->data = (double**)malloc(rows * sizeof(double*));
-    for (size_t i = 0; i < rows; ++i) {
+    size_t i = 0;
+    for (; i < rows; ++i) {
         matrix->data[i] = (double*)malloc(cols * sizeof(double));
     }
     return matrix;
@@ -37,8 +38,10 @@ Matrix* create_matrix_from_file(const char* file_path) {
     }
 
     Matrix* matrix = create_matrix(rows, cols);
-    for (int i = 0; i < rows; ++i)
-        for (int j = 0; j < cols; ++j) {
+    int i = 0;
+    for (; i < rows; ++i) {
+        int j = 0;
+        for (j = 0; j < cols; ++j) {
             double value;
             if (fscanf(matrix_file, "%308lf", &value) == -1) {
                 fclose(matrix_file);
@@ -47,6 +50,7 @@ Matrix* create_matrix_from_file(const char* file_path) {
             }
             matrix->data[i][j] = value;
         }
+    }
     fclose(matrix_file);
     return matrix;
 }
@@ -54,7 +58,8 @@ Matrix* create_matrix_from_file(const char* file_path) {
 void free_matrix(Matrix* matrix) {
     if (matrix == NULL)
         return;
-    for (size_t i = 0; i < matrix->rows; ++i)
+    size_t i = 0;
+    for (; i < matrix->rows; ++i)
         free(matrix->data[i]);
     free(matrix->data);
     free(matrix);
@@ -73,8 +78,10 @@ Matrix** split_matrix(Matrix* matrix) {
     Matrix* matrix1 = create_matrix(rows, (cols + 2) / 3);
     Matrix* matrix2 = create_matrix(rows, (cols + 1) / 3);
     Matrix* matrix3 = create_matrix(rows, cols / 3);
-    for (size_t i = 0; i < rows; ++i) {
-        for (size_t j = 0; j < cols; ++j) {
+    size_t i = 0;
+    for (; i < rows; ++i) {
+        size_t j = 0;
+        for (; j < cols; ++j) {
             if (j % 3 == 0) {
                 matrix1->data[i][j / 3] = matrix->data[i][j];
             } else if (j % 3 == 1) {
@@ -98,8 +105,10 @@ void print_matrix(Matrix* matrix) {
     if (matrix->cols < 1 || matrix->rows < 1)
         return;
     printf("\n");
-    for (size_t i = 0; i < matrix->rows; ++i) {
-        for (size_t j = 0; j < matrix->cols; ++j) {
+    size_t i = 0;
+    for (; i < matrix->rows; ++i) {
+        size_t j = 0;
+        for (; j < matrix->cols; ++j) {
             printf("%3.3lf ", matrix->data[i][j]);
         }
         printf("\n");
@@ -114,9 +123,13 @@ int check_matrices_for_equality(Matrix* matrix1, Matrix* matrix2) {
     if (!(matrix1->rows == matrix2->rows && matrix1->cols == matrix2->cols))
         return 0;
 
-    for (int i = 0; i < matrix1->rows; ++i)
-        for (int j = 0; j < matrix1->cols; ++j)
+    int i = 0;
+    for (; i < matrix1->rows; ++i) {
+        int j = 0;
+        for (; j < matrix1->cols; ++j) {
             if (matrix1->data[i][j] != matrix2->data[i][j])
                 return 0;
+        }
+    }
     return 1;
 }
