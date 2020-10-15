@@ -1,4 +1,7 @@
 build
+CMakeFiles/
+/*.cmake
+ext/gtest/googletest/generated
 
 # Prerequisites
 *.d
