@@ -64,7 +64,6 @@ script:
      - valgrind --leak-check=full ./runUnitTests
      - cd ..
      - linters/run.sh --local
-     - rm -rf ext
 
 after_success:
      - codecov -t c8b7183a7-31f5-401e-ab37-6ad397e89e12 -X gcov
