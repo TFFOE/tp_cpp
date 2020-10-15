@@ -59,9 +59,8 @@ install:
 script:
      - mkdir -p build
      - cd build
-     - gcovr --filter src/ --filter include/ -x -r . -o coverage.xml
      - cmake -DBUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Coverage ..
-     - make runUnitTests
+     - make task1_coverage
      - valgrind --leak-check=full ./runUnitTests
      - cd ..
      - linters/run.sh --local
