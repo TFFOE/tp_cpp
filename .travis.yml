@@ -59,6 +59,7 @@ install:
 script:
      - mkdir -p build
      - cd build
+     - gcovr --exclude-directories 'ext$'
      - cmake -DBUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Coverage ..
      - make task1_coverage
      - valgrind --leak-check=full ./runUnitTests
