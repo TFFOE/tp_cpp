@@ -59,12 +59,12 @@ install:
 script:
      - mkdir -p build
      - cd build
-     - cmake -DBUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Coverage ..
-     - make task1_coverage
-     - valgrind --leak-check=full ./runUnitTests
+     - cmake -DDYN=OFF .. #-DBUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Coverage ..
+     - make
+     - valgrind --leak-check=full ./task2
      - cd ..
      - linters/run.sh --local
 
-after_success:
-     - codecov -t c8b7183a7-31f5-401e-ab37-6ad397e89e12 -X gcov
-     - bash <(curl -s https://codecov.io/bash)
+#after_success:
+     #- codecov -t c8b7183a7-31f5-401e-ab37-6ad397e89e12 -X gcov
+     #- bash <(curl -s https://codecov.io/bash)

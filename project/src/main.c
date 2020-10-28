@@ -17,7 +17,7 @@ int main() {
     free(array);
     //=============Конец==============
     clock_t end = clock();
-    double time_spent = (end - begin) / CLOCKS_PER_SEC;
-    printf("time spent: %lf\n", time_spent);
+    double time_spent = (end - begin);
+    printf("time spent: %lf clocks\n", time_spent);
     return 0;
 }

@@ -1,13 +1,13 @@
 #include "array_processing.h"
-#include <stdio.h>
 
 void fillArrayRandom(int *array, size_t size) {
+    uint seed = time(NULL);
     for (size_t i = 0; i < size; ++i) {
-        array[i] = rand_r(time(NULL));
+        array[i] = rand_r(&seed);
     }
 }
+
 int createArray(int **array, size_t size) {
-    printf("single\n");
     *array = (int *)malloc(size * sizeof(int));
     return *array != NULL;
 }
