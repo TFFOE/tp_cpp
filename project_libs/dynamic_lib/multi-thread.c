@@ -1,7 +1,7 @@
 #include "array_processing.h"
 
 void fillArrayRandom(int *array, size_t size) {
-    uint seed = time(NULL);
+    unsigned int seed = time(NULL);
     for (size_t i = 0; i < size; ++i) {
         array[i] = rand_r(&seed);
     }
