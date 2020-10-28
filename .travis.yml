@@ -20,8 +20,8 @@ matrix:
       addons:
        apt:
          packages: &precise_latest_boost_packages
-           - gcc-4.8
-           - g++-4.8
+           - gcc-9
+           - g++-9
            - python2.7
            - gcovr
            - clang-3.7
