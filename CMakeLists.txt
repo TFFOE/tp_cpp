@@ -8,7 +8,7 @@ SET (BASIC_EXE task2)
 # Отключение assert
 # add_compile_options("-DNDEBUG")
 
-add_compile_options("-Wall"  "-Werror" "-Wpedantic" "-std=c11")
+add_compile_options("-Wall"  "-Werror" "-Wpedantic" "-std=c18")
 SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")
 SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
 
