@@ -3,10 +3,7 @@
 #include <time.h>
 #include <stdio.h>
 
-int main() 
-{
-    srand(time(NULL));
-
+int main() {
     clock_t begin = clock();
     //=============Начало============
     const size_t size = 100 * 1024 * 1024 / 8 / sizeof(int);
@@ -15,7 +12,7 @@ int main()
         return 1;
     fillArrayRandom(array, size);
     int sum = calculateChecksum(array, size);
-    
+
     printf("%d\n", sum);
     free(array);
     //=============Конец==============

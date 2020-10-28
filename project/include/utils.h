@@ -1,5 +1,4 @@
-#if !defined(PROJECT_INCLUDE_UTILS_H)
-#define PROJECT_INCLUDE_UTILS_H
-#include <stdlib.h>
+#ifndef PROJECT_INCLUDE_UTILS_H_
+#define PROJECT_INCLUDE_UTILS_H_
 
-#endif // PROJECT_INCLUDE_UTILS_H
+#endif  // PROJECT_INCLUDE_UTILS_H_
