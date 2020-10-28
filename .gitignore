@@ -1,7 +1,7 @@
 build
 *.cmake
 generated
-
+.vscode/
 
 # Prerequisites
 *.d

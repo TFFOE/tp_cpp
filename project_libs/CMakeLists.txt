@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.16.3)
+project(myLib)
+
+option(DYN "build dynamic lib instead of static" OFF)
+set (HEADERS "array_processing.h")
+set(STATIC_SRC "static_lib/single-thread.c")
+set(DYNAMIC_SRC "dynamic_lib/multi-thread.c")
+
+if (DYN)
+    add_library(lib SHARED ${DYNAMIC_SRC} ${HEADERS})
+    set_property(TARGET lib PROPERTY POSITION_INDEPENDENT_CODE ON)
+    target_include_directories(lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+else()
+    add_library(lib STATIC ${STATIC_SRC} ${HEADERS})
+    target_include_directories(lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+endif()
