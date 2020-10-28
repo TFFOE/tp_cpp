@@ -2,6 +2,7 @@
 #include "array_processing.h"
 #include <time.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     clock_t begin = clock();
