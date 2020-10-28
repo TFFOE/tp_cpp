@@ -2,8 +2,9 @@
 
 void fillArrayRandom(int *array, size_t size) {
     unsigned int seed = time(NULL);
+    srand(seed);
     for (size_t i = 0; i < size; ++i) {
-        array[i] = rand_r(&seed);
+        array[i] = rand();
     }
 }
 
