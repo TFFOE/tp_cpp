@@ -32,5 +32,6 @@ int checkSumArrayFromFile(char* path_to_file) {
         fscanf(array_file, "%15d", &current_dgt);
         result = (result + current_dgt % 1024) % 1024;
     }
+    fclose(array_file);
     return result;
 }
