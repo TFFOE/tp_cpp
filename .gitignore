@@ -2,6 +2,7 @@ build
 *.cmake
 generated
 .vscode/
+*.arr
 
 # Prerequisites
 *.d

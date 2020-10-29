@@ -22,6 +22,9 @@ add_subdirectory(project_libs)
 
 add_executable(${BASIC_EXE} ${SOURCES})
 target_link_libraries(${BASIC_EXE} lib)
+if(DYN)
+  target_link_libraries(${BASIC_EXE} pthread)
+endif()
 
 option(BUILD_TESTS "Build all tests." OFF)
 if (BUILD_TESTS)

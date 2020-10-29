@@ -19,3 +19,18 @@ int calculateChecksum(int *array, size_t size) {
     }
     return sum;
 }
+
+int checkSumArrayFromFile(char* path_to_file) {
+    FILE* array_file = fopen(path_to_file, "r");
+    int result = 0;
+    if (array_file == NULL)
+        return -1;
+    int n = 0;
+    fscanf(array_file, "%d", &n);
+    for (int i = 0; i < n; ++i) {
+        int current_dgt = 0;
+        fscanf(array_file, "%d", &current_dgt);
+        result = (result + current_dgt % 1024) % 1024;
+    }
+    return result;
+}
