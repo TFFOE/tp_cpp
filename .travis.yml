@@ -57,6 +57,7 @@ install:
         export PATH=${DEPS_DIR}/cmake/bin:${PATH}
       fi
 script:
+     - python3 array_gen.py 1000000
      - mkdir -p build
      - cd build
      - cmake -DDYN=OFF .. #-DBUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Coverage ..
@@ -64,7 +65,6 @@ script:
      - valgrind --leak-check=full ./task2
      - cd ..
      - linters/run.sh --local
-     - python3 test/array_gen.py
 
 #after_success:
      #- codecov -t c8b7183a7-31f5-401e-ab37-6ad397e89e12 -X gcov
